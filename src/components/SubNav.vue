@@ -45,7 +45,7 @@
 import { mapGetters }	from 'vuex'
 export default {
 	name: 'sub-nav',
-	props:{
+	props: {
 		mold:{
 			type:String,
 			default: 'quickNav'
@@ -55,10 +55,11 @@ export default {
 	data (){
 		return {}
 	},
-	computed:{
+	computed: {
 		//正确链接
 		//holder
 		//存储
+		// ...mapGetters(['currentUser'])
 	},
 	methods:{
 		//登出
@@ -67,7 +68,7 @@ export default {
 }
 
 </script>
-<style lang='scss' scoped="">
+<style lang='scss' scoped>
 	.navBottom {
   width: 100%;
   border-bottom: 0.1rem solid #f3f3f3;

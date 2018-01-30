@@ -73,11 +73,11 @@
 </template>
 
 <script>
-	import Subnav from '../components/SubNav'
+	import SubNav from '../components/SubNav'
 	
 export default {
 	name:'talion-view',
-	components:{ Subnav },
+	components:{ SubNav },
 	data () {
 		return {
 			queryStr: ''
