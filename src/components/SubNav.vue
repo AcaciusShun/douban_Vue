@@ -12,7 +12,7 @@
 				</template>
 			</div>
 			<div class="nav-item">
-				<a href="">使用桌面版</a>
+				<a href="#">使用桌面版</a>
 				<a href="#">使用豆瓣app</a>
 			</div>
 		</div>
