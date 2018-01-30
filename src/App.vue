@@ -1,13 +1,14 @@
 <template>
   <div id="app">
     <router-view class="view"></router-view>
-
+    <router-view class="view" name="subject"></router-view>
+    <router-view class="view" name="search"></router-view>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'app'
 }
 </script>
 
@@ -61,4 +62,3 @@ a {
   border-bottom: 0.1rem solid #f3f3f3;
 }
 </style>
-
