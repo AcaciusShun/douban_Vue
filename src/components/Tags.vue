@@ -1,30 +1,30 @@
 <template>
-	<div class="tags">
-		<ul>
-			<li v-for="item in items">
-				<a href="#"></a>
-			</li>
-		</ul>
-	</div>
+  <div class="tags">
+    <ul>
+      <li v-for="item in items">
+        <a href="#">{{item.name ? item.name : item}}</a> 
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
-	export default{
-		name:'tags',
-		props:{
-			item:{
-				type:Array,
-				required:true
-			}
-		},
-		data (){
-			return {}
-		}
-	}
-
+export default {
+  name: 'tags',
+  props: {
+    items: {
+      type: Array,
+      required: true
+    }
+  },
+  data () {
+    return {}
+  }
+}
 </script>
+
 <style lang="scss" scoped>
-	.tags {
+.tags {
   li {
     display: inline-block;
     margin: 1rem 1rem 0 0;
