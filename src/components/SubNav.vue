@@ -1,75 +1,91 @@
 <template>
-	<div class="sub-nav">
-		<div class="navBottom" v-if="mold === 'navBottom'">
-			<div class="nav-item">
-				<router-link :to="{}">注册账号</router-link>	
-				
-				<template v-if="currentUser.email">
-					<a href="#">退出登录</a>
-				</template>
-				<template v-else>
-					<router-link :to="{}">登录豆瓣</router-link>
-				</template>
-			</div>
-			<div class="nav-item">
-				<a href="#">使用桌面版</a>
-				<a href="#">使用豆瓣app</a>
-			</div>
-		</div>
-
-		<div class="quickNav" v-if="mold ==='quickNav'">
-			<ul class="quick-nav">
-				<li>
-					<router-link :to="{}">影院热映</router-link>
-				</li>
-				<li>
-					<router-link :to="{}">欧美新碟榜</router-link>
-				</li>
-				<li>
-					<router-link :to="{}">注册账号</router-link>
-				</li>
-				<li>
-					<template v-if="currentUser.email">
-						<a href="#">退出登录</a>
-					</template>
-					<template v-else>
-						<router-link :to="{}">登录豆瓣</router-link>
-					</template>
-				</li>
-			</ul>
-		</div>
-	</div>
+  <div class="sub-nav">
+    <!-- Bottom nav -->
+    <div class="navBottom" v-if="mold === 'navBottom'">
+      <div class="nav-item">
+        <router-link :to="{name: 'RegisterView'}">注册帐号</router-link><!-- replace blank
+        --><template v-if="currentUser.email">
+          <a href="#" @click.prevent="logout()">退出登录</a>
+        </template>
+        <template v-else>
+          <router-link :to="{name: 'LoginView'}" replace>登录豆瓣</router-link>
+        </template>
+      </div>
+      <div class="nav-item">
+        <a href="https://movie.douban.com/">使用桌面版</a><!-- replace blank
+        --><a href="#">使用豆瓣App</a>
+      </div>
+    </div>
+    <!-- Quick start nav -->
+    <div class="quickNav" v-if="mold === 'quickNav'">
+      <ul class="quick-nav">
+        <li>
+          <router-link :to="{name: 'MovieView'}">影院热映</router-link>
+        </li>
+        <li>
+          <router-link :to="{name: 'StatusView'}">欧美新碟榜</router-link>
+        </li>
+        <li>
+          <router-link :to="{name: 'RegisterView'}">注册帐号</router-link>
+        </li>
+        <li>
+          <template v-if="currentUser.email">
+            <a href="#" @click.prevent="logout()">退出登录</a>
+          </template>
+          <template v-else>
+            <router-link :to="{name: 'LoginView'}" replace>登录豆瓣</router-link>
+          </template>
+        </li>
+      </ul>
+    </div>
+  </div>
 </template>
 
 <script>
-import { mapGetters }	from 'vuex'
+import { mapGetters } from 'vuex'
+
 export default {
-	name: 'sub-nav',
-	props: {
-		mold:{
-			type:String,
-			default: 'quickNav'
-		}
-	},
-
-	data (){
-		return {}
-	},
-	computed: {
-		//正确链接
-		//holder
-		//存储
-		// ...mapGetters(['currentUser'])
-	},
-	methods:{
-		//登出
-		//已有
-	}
+  name: 'sub-nav',
+  props: {
+    mold: {
+      type: String,
+      default: 'quickNav'
+    }
+  },
+  data () {
+    return {}
+  },
+  computed: {
+    currentLink: function () {
+      return this.currentUser.name ? 'StatusView' : 'LoginView'
+    },
+    holder: function () {
+      return this.currentUser.name ? this.currentUser.name : '请先登录'
+    },
+    // Map store/user state
+    ...mapGetters(['currentUser'])
+  },
+  methods: {
+    logout () {
+      this.$store.commit({
+        type: 'logout'
+      })
+      this.$router.push({name: 'HomeView'})
+    }
+  },
+  created () {
+    // Get local user filling store/user
+    if (localStorage.getItem('email')) {
+      this.$store.commit({
+        type: 'getLocalUser'
+      })
+    }
+  }
 }
-
 </script>
+
 <style lang='scss' scoped>
-	.navBottom {
+.navBottom {
   width: 100%;
   border-bottom: 0.1rem solid #f3f3f3;
 
@@ -123,5 +139,4 @@ export default {
     }
   }
 }
-
 </style>
