@@ -10,8 +10,17 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'PagesView',
-      component: PagesView
+      redirect: '/pages/'
+    },
+    {
+    	path: '/pages',
+      	component: PagesView,
+      	children: [
+      		{
+	          path: '',
+	          redirect: '/pages/home'
+        	}
+      	]
     }
   ]
 })
