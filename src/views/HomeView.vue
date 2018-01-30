@@ -1,5 +1,5 @@
 <template>
-	<div class="home-view has-header">
+  <div class="home-view has-header">
     <sub-nav mold="quickNav"></sub-nav>
     <list mold="thumbnail" :items="events"></list>
     <infinite-loading :on-infinite="onInfinite" ref="infiniteLoading">
@@ -22,14 +22,25 @@ export default {
   data () {
     return {}
   },
-
   computed: {
-
+    // Getting Vuex State from store/modules/activities
+    ...mapState({
+      events: state => state.activities.events
+    })
   },
   methods: {
-
+    // Using vue-infinite-loading
+    onInfinite () {
+      setTimeout(() => {
+        this.loadMore()
+        this.$refs.infiniteLoading.$emit('$InfiniteLoading:loaded')
+      }, 1000)
+    },
+    // Dispatching Actions
+    ...mapActions([
+      'loadMore'
+    ])
   }
-
 }
 </script>
 
