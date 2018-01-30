@@ -1,15 +1,14 @@
 <template>
 	<div class="sub-nav">
-		<!-- 按钮导航 -->
-		<div class="navBottom" v-if="mold ==='navBottom'">
+		<div class="navBottom" v-if="mold === 'navBottom'">
 			<div class="nav-item">
-				<router-link></router-link>	
-				<!-- replace blank -->
+				<router-link :to="{}">注册账号</router-link>	
+				
 				<template v-if="currentUser.email">
 					<a href="#">退出登录</a>
 				</template>
 				<template v-else>
-					<router-link>登录豆瓣</template>
+					<router-link :to="{}">登录豆瓣</router-link>
 				</template>
 			</div>
 			<div class="nav-item">
@@ -21,20 +20,20 @@
 		<div class="quickNav" v-if="mold ==='quickNav'">
 			<ul class="quick-nav">
 				<li>
-					<router-link>影院热映</router-link>
+					<router-link :to="{}">影院热映</router-link>
 				</li>
 				<li>
-					<router-link>欧美新碟榜</router-link>
+					<router-link :to="{}">欧美新碟榜</router-link>
 				</li>
 				<li>
-					<router-link>注册账号</router-link>
+					<router-link :to="{}">注册账号</router-link>
 				</li>
 				<li>
 					<template v-if="currentUser.email">
 						<a href="#">退出登录</a>
 					</template>
 					<template v-else>
-						<router-link>登录豆瓣</template>
+						<router-link :to="{}">登录豆瓣</router-link>
 					</template>
 				</li>
 			</ul>
@@ -45,7 +44,7 @@
 <script>
 import { mapGetters }	from 'vuex'
 export default {
-	name:'sub-nav',
+	name: 'sub-nav',
 	props:{
 		mold:{
 			type:String,
