@@ -68,14 +68,102 @@
 				</div>
 			</li>
 		</ul>
-		<!-- subnav -->
-
+		<sub-nav mold="navBottom"></sub-nav>
 	</div>
 </template>
 
 <script>
 	import Subnav from '../components/SubNav.vue'
 	
-	
+export default {
+	name:'talion-view',
+	components:{ Subnav },
+	data () {
+		return {
+			queryStr: ''
+		}
+	},
+	methods: {
+		//关闭遮罩层
+		//搜索
+	},
+}
+
 </script>
-<style></style>
+<style lang="scss" scoped>
+	.talion-view {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 999;
+}
+
+.close-talion {
+  color: #42bd56;
+  font-size: 1.6rem;
+}
+
+.search {
+  flex: 1;
+  width: 100%;
+  padding-left: 1rem;
+}
+
+input[type=search] {
+  box-sizing: border-box;
+  border: 0;
+  <!-- background: -->
+  background-size: 1.73rem;
+  border-radius: 0.3rem;
+  width: 100%;
+  height: 3.2rem;
+  font-size: 1.4rem;
+}
+
+input[type=search]:focus {
+  background: #f3f3f3;
+}
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 2.5rem;
+
+  li {
+    width: 33.33%;
+  }
+
+  div {
+    position: relative;
+    float: left;
+    left: 50%;
+    top: 0;
+  }
+
+  a {
+    position: relative;
+    left: -50%;
+    top: 0;
+    display: block;
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+
+  strong {
+    display: block;
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+  }
+
+  span {
+    display: block;
+    color: #999;
+    height: 1.7rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+  }
+}
+</style>
