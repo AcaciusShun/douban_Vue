@@ -12,7 +12,7 @@ Vue.use(vueScrollBehavior, { router: router })
 new Vue({
   el: '#app',
   router,
-  store,
+  // store,
   template: '<App/>',
   components: { App }
 })
