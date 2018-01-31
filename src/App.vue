@@ -11,6 +11,7 @@ export default {
   name: 'app'
 }
 </script>
+
 <style lang="scss">
 
 // Base setting and rest
