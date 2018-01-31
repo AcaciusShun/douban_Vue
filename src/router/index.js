@@ -86,7 +86,7 @@ export default new Router({
       path: '/register',
       name: 'RegisterView',
       component: RegisterView
-    // },
+    },
     {
       path: '*',
       redirect: '/pages/'
