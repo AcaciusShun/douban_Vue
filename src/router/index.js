@@ -34,34 +34,33 @@ export default new Router({
           name: 'HomeView',
           component: HomeView
         },
-        {
-          path: 'movie',
-          name: 'MovieView',
-          component: MovieView
-        },
-        {
-          path: 'book',
-          name: 'BookView',
-          component: BookView
-        },
-        {
-          path: 'status',
-          name: 'StatusView',
-          component: StatusView
-        },
-        {
-          path: 'group',
-          name: 'GroupView',
-          component: GroupView
-        },
-        {
-          path: 'detail/:id',
-          name: 'DetailView',
-          component: DetailView
-        }
+        // {
+        //   path: 'movie',
+        //   name: 'MovieView',
+        //   component: MovieView
+        // },
+        // {
+        //   path: 'book',
+        //   name: 'BookView',
+        //   component: BookView
+        // },
+        // {
+        //   path: 'status',
+        //   name: 'StatusView',
+        //   component: StatusView
+        // },
+        // {
+        //   path: 'group',
+        //   name: 'GroupView',
+        //   component: GroupView
+        // },
+        // {
+        //   path: 'detail/:id',
+        //   name: 'DetailView',
+        //   component: DetailView
+        // }
       ]
     },
-    
     {
       path: '/pages/:classify/subject/:id',
       name: 'SubjectView',
@@ -70,24 +69,24 @@ export default new Router({
         subject: SubjectView
       }
     },
-    {
-      path: '/search',
-      name: 'SearchView',
-      components: {
-        default: PagesView,
-        search: SearchView
-      }
-    },
-    {
-      path: '/login',
-      name: 'LoginView',
-      component: LoginView
-    },
-    {
-      path: '/register',
-      name: 'RegisterView',
-      component: RegisterView
-    },
+    // {
+    //   path: '/search',
+    //   name: 'SearchView',
+    //   components: {
+    //     default: PagesView,
+    //     search: SearchView
+    //   }
+    // },
+    // {
+    //   path: '/login',
+    //   name: 'LoginView',
+    //   component: LoginView
+    // },
+    // {
+    //   path: '/register',
+    //   name: 'RegisterView',
+    //   component: RegisterView
+    // },
     {
       path: '*',
       redirect: '/pages/'
