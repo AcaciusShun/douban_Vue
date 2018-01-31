@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 // Vue.config.productionTip = false
+import store from './store'
 import vueScrollBehavior from 'vue-scroll-behavior'
 import 'normalize.css'
 
@@ -13,7 +14,7 @@ Vue.use(vueScrollBehavior, { router: router })
 new Vue({
   el: '#app',
   router,
-  // store,
+  store,
   template: '<App/>',
   components: { App }
 })
