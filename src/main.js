@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 // Vue.config.productionTip = false
 import vueScrollBehavior from 'vue-scroll-behavior'
+import 'normalize.css'
 
 Vue.use(vueScrollBehavior, { router: router })
 
