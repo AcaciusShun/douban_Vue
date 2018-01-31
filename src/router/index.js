@@ -8,7 +8,7 @@ import HomeView from '../views/HomeView'
 import StatusView from '../views/StatusView'
 // import GroupView from '../views/GroupView'
 import SubjectView from '../views/SubjectView'
-// import DetailView from '../views/DetailView'
+import DetailView from '../views/DetailView'
 // import SearchView from '../views/SearchView'
 // import LoginView from '../views/LoginView'
 // import RegisterView from '../views/RegisterView'
@@ -54,11 +54,11 @@ export default new Router({
         //   name: 'GroupView',
         //   component: GroupView
         // },
-        // {
-        //   path: 'detail/:id',
-        //   name: 'DetailView',
-        //   component: DetailView
-        // }
+        {
+          path: 'detail/:id',
+          name: 'DetailView',
+          component: DetailView
+        }
       ]
     },
     {
