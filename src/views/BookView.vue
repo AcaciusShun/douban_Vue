@@ -8,7 +8,7 @@
         <div class="content">
           <span class="price">¥ 68</span>
           <p class="name">造物</p>
-          <p class="info">改变世界的万物图典，3000幅图里的发明与冒险</p> 
+          <p class="info">改变世界的万物图典，3000幅图里的发明与冒险</p>
         </div>
       </div>
     </scroller>
