@@ -5,7 +5,7 @@ import PagesView from '../views/PagesView'
 import HomeView from '../views/HomeView'
 // import MovieView from '../views/MovieView'
 // import BookView from '../views/BookView'
-// import StatusView from '../views/StatusView'
+import StatusView from '../views/StatusView'
 // import GroupView from '../views/GroupView'
 import SubjectView from '../views/SubjectView'
 // import DetailView from '../views/DetailView'
@@ -44,11 +44,11 @@ export default new Router({
         //   name: 'BookView',
         //   component: BookView
         // },
-        // {
-        //   path: 'status',
-        //   name: 'StatusView',
-        //   component: StatusView
-        // },
+        {
+          path: 'status',
+          name: 'StatusView',
+          component: StatusView
+        },
         // {
         //   path: 'group',
         //   name: 'GroupView',
