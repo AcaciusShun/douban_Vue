@@ -2,7 +2,7 @@
   <div class="tags">
     <ul>
       <li v-for="item in items">
-        <a href="#">{{item.name ? item.name : item}}</a> 
+        <a href="#">{{item.name ? item.name : item}}</a>
       </li>
     </ul>
   </div>
